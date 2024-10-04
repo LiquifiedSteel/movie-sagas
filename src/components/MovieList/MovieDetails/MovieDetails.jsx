@@ -1,21 +1,23 @@
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
-import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+
 
 function MovieDetails() {
     const movieId = useSelector(store => store.toDetailsReducer);
+    const history = useHistory();
 
     useEffect(() => {
         const something = 0;
     }, [])
 
     return (
-        <>
+        <div data-testid="movieDetails">
             <header>
                 <h2>Movie Details</h2>
-                <Link to="/">Back to Movies List</Link>
+                <button data-testid="toList" onClick={() => history.push("/")}>Back to Movies List</button>
             </header>
-        </>
+        </div>
     )
 }
 
