@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
-
+import "./MovieDetails.css";
 
 function MovieDetails() {
     const movieId = useSelector(store => store.toDetailsReducer); // movieId is used to tell the database which movie we want details for
@@ -25,7 +25,7 @@ function MovieDetails() {
                 <h3>{details.title}</h3>
                 <img src={details.poster} />
                 <p>{details.description}</p>
-                <ul>
+                <ul className="genres">
                     {details.genreNames.map(genre => (<li>{genre}</li>))}
                 </ul>
             </div>
