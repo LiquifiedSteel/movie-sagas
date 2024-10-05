@@ -1,4 +1,25 @@
 .movies {
     display : flex;
+    flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
+}
+
+.movie {
+    flex-basis: 27%;
+    border: 5px groove gray;
+    margin: 1%;
+    border-radius: 3rem;
+    padding: .6rem;
+    box-shadow: 10px 10px 5px -5px rgba(0,0,0,0.35);
+}
+
+.movie:hover {
+    transition: 0.3s;
+    box-shadow: 20px 20px 10px -10px rgba(0,0,0,0.35);
+}
+
+.poster {
+    border-radius: .8rem;
+    width: 85%;
 }
