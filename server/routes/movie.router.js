@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const pool = require('../modules/pool')
 
+// this gathers the list of movies and sends it to the redux store
 router.get('/', (req, res) => {
   const query = `
     SELECT * FROM "movies"
