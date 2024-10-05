@@ -74,6 +74,7 @@ const toDetailsReducer = (state = 0, action) => {
 const detailsReducer = (state = {title: '', poster: '', description: '', genreNames: ''}, action) => {
   switch (action.type) {
     case 'RECIEVE_DETAILS':
+      console.log(action.payload);
       return action.payload;
     default:
       return state;
