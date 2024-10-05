@@ -4,16 +4,15 @@ import './MovieList.css';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
 function MovieList() {
-  const history = useHistory();
+  const history = useHistory(); // history is used for switching pages via routing
   const dispatch = useDispatch();
-  const movies = useSelector(store => store.movies);
+  const movies = useSelector(store => store.movies); // movies is an array of all the movies in the movies table in the database
 
-  useEffect(() => {
-    dispatch({ type: 'FETCH_MOVIES' });
-  }, []);
+  // this useEffect sends a request to the redux store to get the list of movies from the database
+  useEffect(() => {dispatch({ type: 'FETCH_MOVIES' });}, []);
 
+  // handleClick takes the ID of the chosen movie and store it, then moves the user to the MovieDetails page
   function handleClick(id) {
-    console.log(id);
     dispatch({ type: "CAPTURE_MOVIE", payload: id});
     history.push('/details');
   }

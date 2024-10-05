@@ -8,8 +8,6 @@ function MovieDetails() {
     const details = useSelector(store => store.detailsReducer[0]); // details is an object of all the details for the desired movie
     const history = useHistory(); // history is used for switching pages via routing
     const dispatch = useDispatch();
-    console.log(details);
-    console.log('on details page');
 
     // this useEffect sends a request to the redux store asking for the details on the desired movie
     // to be sent to the detailsReducer so the details can be grabbed by the details variable
