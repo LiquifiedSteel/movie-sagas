@@ -48,8 +48,9 @@ const sagaMiddleware = createSagaMiddleware();
 //========  REDUCERS FOR CATA AND FAV ======== 
 // {{{{{{{{{{{{{{{{{{{{}}}}}}}}}}}}}}}}}}}}
 
-// Used to store movies returned from the server
+// ======== MOVIES REDUCER ======== 
 const movies = (state = [], action) => {
+  // Used to store movies returned from the server
   switch (action.type) {
     case 'SET_MOVIES':
       return action.payload;
@@ -58,8 +59,9 @@ const movies = (state = [], action) => {
   }
 }
 
-// Used to store the movie genres
+// ======== GENRES REDUCER ======== 
 const genres = (state = [], action) => {
+  // Used to store the movie genres
   switch (action.type) {
     case 'SET_GENRES':
       return action.payload;
@@ -68,6 +70,7 @@ const genres = (state = [], action) => {
   }
 }
 
+// ======== MOVIE ID REDUCER ======== 
 const toDetailsReducer = (state = 0, action) => {
   switch (action.type) {
     case 'CAPTURE_MOVIE':
@@ -77,6 +80,7 @@ const toDetailsReducer = (state = 0, action) => {
   }
 }
 
+// ======== MOVIE DETAILS REDUCER ======== 
 const detailsReducer = (state = {title: '', poster: '', description: '', genreNames: ''}, action) => {
   switch (action.type) {
     case 'RECIEVE_DETAILS':
