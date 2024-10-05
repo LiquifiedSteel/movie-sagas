@@ -22,8 +22,10 @@ function MovieDetails() {
                 <button data-testid="toList" onClick={() => history.push("/")}>Back to Movies List</button>
             </header>
             <div>
-                <h3>{details.title}</h3>
-                <img src={details.poster} />
+                <div className="posterCard">
+                    <h3 id="detailsTitle">{details.title}</h3>
+                    <img className="detailsPoster" src={details.poster} />
+                </div>
                 <p>{details.description}</p>
                 <ul className="genres">
                     {details.genreNames.map(genre => (<li>{genre}</li>))}
