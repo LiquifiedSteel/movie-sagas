@@ -10,17 +10,21 @@ p {
     max-width: 80%;
     margin-left: auto;
     margin-right: auto;
-    border: 4px solid black;
+    border: 4px solid #F42272;
     padding: .75rem;
+    background-color: #127475;
+    color: #F7F7F7;
+    font-weight: 700;
 }
 
 .posterCard {
-    border: 15px groove pink;
+    border: 15px groove #F42272;
     width: 40%;
     margin: 2rem;
     padding: 1rem;
     margin-left: auto;
     margin-right: auto;
+    background-color: #0E9594;
 }
 
 .detailsPoster {
@@ -28,8 +32,16 @@ p {
 }
 
 #detailsTitle {
-    border: 3px solid orange;
+    border: 5px solid #F42272;
     width: fit-content;
     margin-left: auto;
     margin-right: auto;
+    color: #F7F7F7;
+    font-size: 2rem;
+}
+
+header {
+    background-color: #0E9594;
+    margin: 0px;
+    padding: 1rem;
 }
