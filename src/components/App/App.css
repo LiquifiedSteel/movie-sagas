@@ -8,3 +8,12 @@ h1 {
   padding: 1.5rem;
   color: #F7F7F7;
 }
+
+.link {
+  background-color: #127475;
+  width: 100%;
+}
+
+.pad {
+  padding-bottom: .6rem;
+}
