@@ -18,9 +18,6 @@ function App() {
         
         {/* Details page */}
         <Route path="/details">
-          <div className="link pad" >
-            <Link to="/add">Add Movie</Link>
-          </div>
           <MovieDetails />
         </Route>
 

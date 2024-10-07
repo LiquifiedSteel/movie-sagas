@@ -7,7 +7,8 @@ import axios from 'axios';
 //========  MAIN SAGA ROOT  ========
 function* rootSaga() {
   yield takeEvery('FETCH_MOVIES', fetchAllMovies);
-  yield takeEvery('FETCH_DETAILS', fetchMovieDetails)
+  yield takeEvery('FETCH_DETAILS', fetchMovieDetails);
+  yield takeEvery('ADD_MOVIE', addMovie);
 }
 
 //========  COLLECT ALL MOVIES  ========
@@ -29,13 +30,23 @@ function* fetchAllMovies() {
 function* fetchMovieDetails(action) {
   try {
     // Get the details:
-    console.log(action.payload);
     const detailsResponse = yield axios.get(`/api/genres/${action.payload}`);
-    // Set the value of the detils reducer:
+    // Set the value of the details reducer:
     yield put({
       type: 'RECIEVE_DETAILS',
       payload: detailsResponse.data
     });
+  } catch (error) {
+    console.log('fetchMovieDetails error:', error);
+  }
+}
+
+function* addMovie(action) {
+  try {
+    // Add the movie:
+    yield axios.post(`/api/movies`, action.payload);
+    // Reset the value of the addMovie reducer:
+    yield put({type: 'RESET_ADD'});
   } catch (error) {
     console.log('fetchMovieDetails error:', error);
   }
@@ -84,8 +95,31 @@ const toDetailsReducer = (state = 0, action) => {
 const detailsReducer = (state = {title: '', poster: '', description: '', genreNames: ''}, action) => {
   switch (action.type) {
     case 'RECIEVE_DETAILS':
-      console.log(action.payload);
       return action.payload;
+    default:
+      return state;
+  }
+}
+
+// ======== ADD MOVIE REDUCER ======== 
+const newMovieReducer = (state = {title: '', poster: '', description: '', genre_id: ''}, action) => {
+  let NewState;
+  switch (action.type) {
+    case 'ADDING_TITLE':
+      NewState = {...state, title: action.payload};
+      return NewState;
+    case 'ADDING_POSTER':
+      NewState = {...state, poster: action.payload};
+      return NewState;
+    case 'ADDING_DESCRIPTION':
+      NewState = {...state, description: action.payload};
+      return NewState;
+    case 'ADDING_GENRE':
+      NewState = {...state, genre_id: action.payload};
+      return NewState;
+    case 'RESET_ADD':
+      NewState = {title: '', poster: '', description: '', genre_id: ''};
+      return NewState;
     default:
       return state;
   }
@@ -98,6 +132,7 @@ const storeInstance = createStore(
     genres,
     toDetailsReducer,
     detailsReducer,
+    newMovieReducer,
   }),
   // Add sagaMiddleware to our store
   applyMiddleware(sagaMiddleware, logger),
