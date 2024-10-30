@@ -2,6 +2,12 @@
 
 A website that shows a list of movies with details that can be viewed.
 
+## Setup
+
+If you want to create a copy of this code and get it working on your computer, you will need to `npm install`, `npm run server`, and `npm run client`.
+
+You will also need to setup a database called 'saga_movies_weekend' or you can change it to whatever you want by going to `/server/modules/pool.js on line 21` as well as copy, paste and run the code in the database.sql file into your database.
+
 ## Description
 
 The home page shows a list of available movies
