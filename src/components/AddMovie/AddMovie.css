@@ -1,0 +1,36 @@
+.horizontal {
+    display: flex;
+    flex-flow: row;
+    margin: auto;
+    margin-top: 4vh;
+    margin-bottom: 4vh;
+    max-width: fit-content;
+}
+
+.vertical {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    margin-right: 1vw;
+}
+
+.cardStyle {
+    margin: auto;
+    margin-top: 3vh;
+    text-align: center;
+    background-color: #127475;
+    padding: 4vw;
+    max-width: fit-content;
+    border: 3px solid black;
+    border-radius: 10px;
+    box-shadow: 0px 5px 5px 5px rgba(58, 58, 56, 0.772);
+}
+
+textarea {
+    height: 10vh;
+    min-height: 12vh;
+    max-height: 12vh;
+    min-width: 30vw;
+    max-width: 30vw;
+}
+
