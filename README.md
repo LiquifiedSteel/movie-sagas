@@ -10,8 +10,10 @@ The home page shows a list of available movies
 
 ![screenshot of the landing / movie list page](./public/wireframes/home.png)
 
-- Each movie can be clicked on and the site will take you to a page with details of the movie.
-
 - The details page has the movie title, the poster, a brief description of the movie, and each of the genres the movie falls under.
 
+![screenshot of the details page](./public/wireframes/details.png)
+
 - The add movie page allows the user to add a new movie to the database where it can be displayed on the movie list page.
+
+![screenshot of the add movie page](./public/wireframes/add.png)
